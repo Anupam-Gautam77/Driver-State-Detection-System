@@ -1,0 +1,174 @@
+{% comment %} <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver State Detection System</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-indigo-500">
+
+    <div class="container mx-auto py-10">
+        <div class="text-3xl font-bold text-center mb-8 text-white">
+            <h1 class="text-5xl font-bold mb-8 text-center font-serif">DRIVER STATE DETECTION</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                <img src="media\media\driver.jpeg" alt="state" class="w-60 h-60 mb-4">
+                <h1 class="text-3xl font-bold mb-8 text-center font-serif">Detect Driver State</h1>
+                <a href="{% url 'myapp:update_activity' %}" class="btn bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">INPUT IMAGE</a>
+                <a href="{% url 'myapp:update_video' %}" class="btn bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 mt-6">INPUT VIDEO</a>
+
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                <img src="media\media\download.jpeg" alt="drowsiness" class="w-60 h-60 mb-4">
+                <h1 class="text-xl font-bold mb-2">Drowsiness Detection</h1>
+                <a href="{% url 'drowsiness:drowsy' %}" class="btn bg-blue-500 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Update</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html> {% endcomment %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver State Detection System</title>
+ 
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="bg-gray-100 font-sans">
+
+    <!-- Navigation Bar -->
+    <nav class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-3xl font-bold">
+                <i class="fas fa-car mr-2 "></i> DRIVER STATE DETECTION SYSTEM
+            </h1>
+            <ul class="flex space-x-8">
+                <li><a href="{% url 'myapp:index' %}" class="hover:text-gray-200 text-2xl font-bold">Home</a></li>
+                <li><a href="#" class="hover:text-gray-200 text-2xl font-bold">About</a></li>
+                <li><a href="#" class="hover:text-gray-200 text-2xl font-bold">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Body Content -->
+    <div class="container mx-auto py-10">
+        <div class="text-center mb-8">
+            <h1 class="text-5xl font-bold text-blue-900">"Navigate Life Safely: Drive Wise, Arrive Alive."</h1>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                <img src="media\media\driver.jpeg" alt="state" class="w-60 h-60 mb-4">
+                <h2 class="text-4xl font-bold mb-8 text-blue-900">Detect Driver State</h2>
+                <div class="flex flex-row mt-8">
+                    {% comment %} <a href="{% url 'myapp:update_activity' %}" class="btn bg-blue-600 text-white px-4 py-2 rounded-lg font-bold font-sans shadow-md hover:bg-blue-700 focus:outline-none focus:bg-blue-600">INPUT IMAGE</a> {% endcomment %}
+                    <a href="{% url 'myapp:update_video' %}" class="btn bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-700 focus:outline-none font-bold font-sans focus:bg-blue-600 ml-4">INPUT VIDEO</a>
+                </div>
+            </div>
+            
+            <div class="bg-white p-6 rounded-lg shadow-md flex flex-col items-center justify-center">
+                <img src="media\media\download.jpeg" alt="drowsiness" class="w-60 h-60 mb-4">
+                <h2 class="text-4xl font-bold mb-8 text-blue-900">Detect Drowsiness</h2>
+                <a href="{% url 'drowsiness:drowsy' %}" class="btn bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md font-bold font-sans hover:bg-blue-700 focus:outline-none focus:bg-blue-600 mt-4">OPEN CAMERA</a>
+            </div>
+        </div>
+        <div class="container mx-auto py-10">
+
+            <!-- Tagline -->
+            <div class="text-center mb-8 ">
+                <h1 class="text-5xl font-bold text-blue-900 ">Drive Safe, Arrive Safe</h1>
+                <p class="mt-4 text-gray-600">Ensuring road safety through awareness, prevention, and responsible driving</p>
+            </div>
+        <!-- Drowsiness Detection -->
+<div class="mb-10 text-center bg-white shadow-md rounded-lg">
+    <h2 class="text-3xl font-bold text-blue-900 mb-4">Drowsiness Prevention</h2>
+    <p class="text-lg text-gray-700 mb-4">Drowsiness while driving is a major cause of accidents. Here are some tips to prevent drowsiness:</p>
+    <ul class="list-disc list-inside text-lg text-gray-700">
+        <li>Get adequate sleep before driving, especially for long trips.</li>
+        <li>Take regular breaks during long journeys to rest and stretch.</li>
+        <li>Avoid driving during hours when you would normally be asleep.</li>
+        <li>Drink caffeinated beverages like coffee or tea to stay alert, but remember that they are not a substitute for sleep.</li>
+        <li>If you feel drowsy, pull over in a safe location and take a short nap.</li>
+    </ul>
+</div>
+
+<!-- Distraction Prevention -->
+<div class="mb-10 text-center bg-white shadow-md rounded-lg">
+    <h2 class="text-3xl font-bold text-blue-900 mb-4">Distraction Prevention</h2>
+    <p class="text-lg text-gray-700 mb-4">Distractions while driving can lead to accidents. Follow these tips to minimize distractions:</p>
+    <ul class="list-disc list-inside text-lg text-gray-700">
+        <li>Avoid using your phone while driving. If necessary, use hands-free options or pull over to a safe location.</li>
+        <li>Set up navigation and adjust controls before you start driving.</li>
+        <li>Do not eat or drink while driving. Take breaks if you need to have a snack or drink.</li>
+        <li>Secure pets properly in the vehicle to prevent them from moving around and causing distractions.</li>
+        <li>Keep conversations with passengers to a minimum and avoid heated discussions or arguments.</li>
+    </ul>
+</div>
+
+            <!-- Preventive Measures -->
+            <div class="mb-10 text-center bg-white shadow-md rounded-lg">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Preventive Measures</h2>
+                <ul class="list-disc list-inside text-lg text-gray-700">
+                    <li>Always wear a seatbelt and ensure all passengers do the same.</li>
+                    <li>Obey traffic laws and speed limits.</li>
+                    <li>Maintain a safe distance from other vehicles.</li>
+                    <li>Avoid distractions such as texting, eating, or using electronic devices while driving.</li>
+                    <li>Regularly check and maintain your vehicle for optimal performance.</li>
+                </ul>
+            </div>
+        
+            <!-- Driving Guidelines -->
+            <div class="mb-10 text-center bg-white shadow-md rounded-lg">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Driving Guidelines</h2>
+                <p class="text-lg text-gray-700">Follow these guidelines to ensure safe driving:</p>
+                <ol class="list-decimal list-inside text-lg text-gray-700">
+                    <li>Always use turn signals when changing lanes or making turns.</li>
+                    <li>Keep your hands on the steering wheel and your eyes on the road.</li>
+                    <li>Be aware of your surroundings and anticipate potential hazards.</li>
+                    <li>Adjust your speed and driving behavior according to road and weather conditions.</li>
+                    <li>Respect pedestrians and cyclists by yielding to them at crosswalks and intersections.</li>
+                </ol>
+            </div>
+        
+            <!-- Facts about Driving Safety -->
+            <div class="mb-10 text-center bg-white shadow-md rounded-lg">
+                <h2 class="text-3xl font-bold text-blue-900 mb-4">Facts about Driving Safety</h2>
+                <p class="text-lg text-gray-700">Did you know?</p>
+                <ul class="list-disc list-inside text-lg text-gray-700">
+                    <li>Road traffic crashes are the leading cause of death among young people aged 15-29.</li>
+                    <li>Seat belts reduce the risk of death by 45% for front-seat passenger car occupants.</li>
+                    <li>Driving under the influence of alcohol or drugs significantly increases the risk of accidents.</li>
+                    <li>Speeding contributes to approximately one-third of all traffic fatalities.</li>
+                    <li>Wearing a helmet while riding a motorcycle can reduce the risk of head injury by 69%.</li>
+                </ul>
+            </div>
+        
+        </div>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2024 Driver State Detection System. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>
